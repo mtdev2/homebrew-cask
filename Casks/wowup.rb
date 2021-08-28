@@ -1,10 +1,9 @@
 cask "wowup" do
-  version "2.1.2"
-  sha256 "d4cd653143a7d2a1578a3c09409ee369e13ca5b63a10db2790b4db08ea7a1736"
+  version "2.4.4"
+  sha256 "94a4ee8a0baa0a39578884b7b8e3242651a3a6f7f4d813efe4d8f8e0bcc7c02b"
 
   url "https://github.com/WowUp/WowUp/releases/download/v#{version}/WowUp-#{version}.dmg",
       verified: "github.com/WowUp/WowUp/"
-  appcast "https://github.com/WowUp/WowUp/releases.atom"
   name "WowUp"
   desc "World of Warcraft addon manager"
   homepage "https://wowup.io/"

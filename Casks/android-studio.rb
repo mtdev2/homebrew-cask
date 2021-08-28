@@ -1,14 +1,24 @@
 cask "android-studio" do
-  version "4.1.3.0,201.7199119"
-  sha256 "e4b146e94595f9a928afba31c90303414b3b2a396796a8114d81cad484cada02"
+  version "2020.3.1.23"
 
-  url "https://dl.google.com/dl/android/studio/install/#{version.before_comma}/android-studio-ide-#{version.after_comma}-mac.dmg",
-      verified: "google.com/dl/android/studio/"
-  appcast "https://dl.google.com/android/studio/patches/updates.xml",
-          must_contain: version.before_comma.chomp(".0")
+  if Hardware::CPU.intel?
+    sha256 "2e8fd75b614c5c48cb3df1fbd91d16e46c09a85bd1dbf458177bbee8b82b2e7e"
+    url "https://redirector.gvt1.com/edgedl/android/studio/install/#{version}/android-studio-#{version}-mac.dmg",
+        verified: "redirector.gvt1.com/edgedl/android/studio/"
+  else
+    sha256 "71b0a1c8932f166e18cc003df6ab414fb5d86e8b6ffa9292f82f9a7159caf874"
+    url "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/#{version}/android-studio-#{version}-mac_arm.zip",
+        verified: "redirector.gvt1.com/edgedl/android/studio/"
+  end
+
   name "Android Studio"
   desc "Tools for building Android applications"
   homepage "https://developer.android.com/studio/"
+
+  livecheck do
+    url :homepage
+    regex(/android-studio-(\d+(?:\.\d+)*)-mac/i)
+  end
 
   auto_updates true
 

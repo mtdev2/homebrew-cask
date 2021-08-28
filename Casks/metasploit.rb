@@ -1,12 +1,19 @@
 cask "metasploit" do
-  version "6.0.37,20210319102816"
-  sha256 "154f86e591068456f66250f7225d688ade094ee57b78daa0328e70df98c74b3f"
+  version "6.1.2,20210821102830"
+  sha256 "30e18470a3ded732ffb44276235bb68d34ae4e787f0945e2e6ff00a3be4d0868"
 
   url "https://osx.metasploit.com/metasploit-framework-#{version.before_comma}%2B#{version.after_comma}-1rapid7-1.pkg"
-  appcast "https://osx.metasploit.com/LATEST"
   name "Metasploit Framework"
   desc "Penetration testing framework"
   homepage "https://www.metasploit.com/"
+
+  livecheck do
+    url "https://osx.metasploit.com/LATEST"
+    strategy :page_match do |page|
+      match = page.match(/metasploit-framework-(\d+(?:\.\d+)*)\+(\d+)-1rapid7-1\.pkg/i)
+      "#{match[1]},#{match[2]}"
+    end
+  end
 
   depends_on formula: "nmap"
 

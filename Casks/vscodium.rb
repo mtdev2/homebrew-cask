@@ -1,18 +1,16 @@
 cask "vscodium" do
-  version "1.54.3"
-  sha256 "a927b3fea12cdfd0fdb02a2a3134d17f1ebf1b755f0f92762942d159fb83013d"
+  version "1.59.1"
+  sha256 "03694db4f621fbd3cef124291d0e5f650146bccaa56bf41584b493dd14874b48"
 
   url "https://github.com/VSCodium/vscodium/releases/download/#{version}/VSCodium.x64.#{version}.dmg"
-  appcast "https://github.com/VSCodium/vscodium/releases.atom"
   name "VSCodium"
   desc "Binary releases of VS Code without MS branding/telemetry/licensing"
   homepage "https://github.com/VSCodium/vscodium"
 
   auto_updates true
-  conflicts_with cask: "visual-studio-code"
 
   app "VSCodium.app"
-  binary "#{appdir}/VSCodium.app/Contents/Resources/app/bin/code"
+  binary "#{appdir}/VSCodium.app/Contents/Resources/app/bin/codium"
 
   zap trash: [
     "~/Library/Application Support/VSCodium",

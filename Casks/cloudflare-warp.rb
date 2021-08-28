@@ -1,11 +1,18 @@
 cask "cloudflare-warp" do
-  version "1.3.206,20210305.5"
+  version "1.5.463.0,20210722.12"
   sha256 :no_check
 
-  url "https://1.1.1.1/Cloudflare_WARP.zip"
+  url "https://cloudflarewarp.com/Cloudflare_WARP.zip"
   name "Cloudflare WARP"
   desc "Free app that makes your Internet safer"
-  homepage "https://1.1.1.1/"
+  homepage "https://cloudflarewarp.com/"
+
+  livecheck do
+    # :sparkle strategy using appcenter url cannot be used - see below link
+    # https://github.com/Homebrew/homebrew-cask/pull/109118#issuecomment-887184248
+    url :url
+    strategy :extract_plist
+  end
 
   auto_updates true
 

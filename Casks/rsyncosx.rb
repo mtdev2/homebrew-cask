@@ -1,13 +1,13 @@
 cask "rsyncosx" do
-  version "6.5.7"
-  sha256 "b123c4c4c70944cdf0f86d867e815710ea461b62d109d8974035ad6b05621e59"
+  version "6.6.3"
+  sha256 "356ef1dab5653946278fe95ffc96cb22898e08de141384779669c3e957abca19"
 
   url "https://github.com/rsyncOSX/RsyncOSX/releases/download/v#{version}/RsyncOSX.#{version}.dmg"
   name "RsyncOSX"
   desc "GUI for rsync"
   homepage "https://github.com/rsyncOSX/RsyncOSX"
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "RsyncOSX.app"
 

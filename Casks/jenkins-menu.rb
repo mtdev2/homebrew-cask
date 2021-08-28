@@ -3,9 +3,14 @@ cask "jenkins-menu" do
   sha256 "dc2b69ab27b99ed0b0c165ade90b504b7c8201213b5334c6d927affd8cf106b4"
 
   url "https://github.com/qvacua/jenkins-menu/releases/download/v#{version}/Jenkins.Menu-#{version}.zip"
-  appcast "https://github.com/qvacua/jenkins-menu/releases.atom"
   name "Jenkins Menu"
+  desc "Menu item which shows the status of a Jenkins CI server"
   homepage "https://github.com/qvacua/jenkins-menu/"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   app "Jenkins Menu.app"
 
@@ -13,4 +18,8 @@ cask "jenkins-menu" do
     "~/Library/Caches/com.qvacua.Jenkins-Menu",
     "~/Library/Preferences/com.qvacua.Jenkins-Menu.plist",
   ]
+
+  caveats do
+    discontinued
+  end
 end

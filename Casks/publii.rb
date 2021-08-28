@@ -1,9 +1,10 @@
 cask "publii" do
-  version "0.38.0"
-  sha256 "ed6135bc5817f659bca3c7697be58376acf2cac67249e78afdd780690ce811c8"
+  version "0.38.3"
+  sha256 "24d3dc60779eba8ea366613bc6318e3bb1739984a4281544743a86fce9398f8a"
 
   url "https://cdn.getpublii.com/Publii-#{version}.dmg"
   name "Publii"
+  desc "Static website generator"
   homepage "https://getpublii.com/"
 
   livecheck do
